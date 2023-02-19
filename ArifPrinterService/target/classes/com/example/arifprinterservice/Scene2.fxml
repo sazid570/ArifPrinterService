@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #BEEE62;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.arifprinterservice.Scene2Controller">
+   <children>
+      <Label fx:id="topWelcomeLabel" layoutX="14.0" layoutY="14.0" text="Hi">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ImageView fx:id="docxImageView" fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="50.0" onDragDropped="#handelDragDropped" onDragOver="#handelDragOver" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/E:/openjfx-19_windows-x64_bin-sdk/ArifPrinterService/src/docxImage.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pdfImageView" fitHeight="130.0" fitWidth="109.0" layoutX="359.0" layoutY="61.0" onDragDropped="#handelDragDroppedPdf" onDragOver="#handelDragOverPdf" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/E:/openjfx-19_windows-x64_bin-sdk/ArifPrinterService/src/pdfImage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="120.0" layoutY="200.0" text="Upload Word file here">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="354.0" layoutY="201.0" text="Upload Pdf File here">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="369.0" layoutY="254.0" text="Print In:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rButton1" layoutX="393.0" layoutY="285.0" mnemonicParsing="false" onAction="#setBill" text="65 GSM">
+         <toggleGroup>
+            <ToggleGroup fx:id="page" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rButton2" layoutX="393.0" layoutY="310.0" mnemonicParsing="false" onAction="#setBill" text="80 GSM/ BW" toggleGroup="$page" />
+      <RadioButton fx:id="rButton3" layoutX="393.0" layoutY="336.0" mnemonicParsing="false" onAction="#setBill" text="80 GSM/COLOR" toggleGroup="$page" />
+      <Label layoutX="28.0" layoutY="255.0" text="Total pages of your Document:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pageNumberTextField" layoutX="46.0" layoutY="290.0" />
+      <CheckBox fx:id="tapeBindingButton" layoutX="394.0" layoutY="363.0" mnemonicParsing="false" onAction="#tapeBinding" text="Tape Binding" />
+      <Button fx:id="getYourBillButton" layoutX="248.0" layoutY="359.0" mnemonicParsing="false" onAction="#change" text="Get Your Bill!" />
+   </children>
+</AnchorPane>
